@@ -11,14 +11,14 @@ const bots = [
     id: 1,
     name: 'Nekozu Music',
     description: 'Downlaod your favourite music from many platform with our bots!.',
-    image: '/down.svg?height=100&width=100',
+    image: '/down.svg?height=150&width=150',
     link: 'https://t.me/NekoMuBot',
   },
   {
     id: 2,
     name: 'Nekozu Translate',
     description: 'Translate text between multiple languages instantly. With also voice to text and translate from photo!',
-    image: '/trans.svg?height=100&width=100',
+    image: '/trans.svg?height=150&width=150',
     link: 'https://t.me/NekoTransBot',
   },
 ]
@@ -169,7 +169,7 @@ export default function HomePage() {
             {/* Footer */}
             <footer className="bg-blue-600 text-white py-8">
               <div className="container mx-auto text-center">
-                <p>&copy; 2023 TelegramBotCo. All rights reserved.</p>
+                <p>&copy; 2024 TelegramBotCo. All rights reserved.</p>
               </div>
             </footer>
           </motion.main>

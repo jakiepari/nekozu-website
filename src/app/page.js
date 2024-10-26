@@ -10,7 +10,7 @@ const bots = [
   {
     id: 1,
     name: 'Nekozu Music',
-    description: 'Downlaod your favourite music from many platform with our bots!.',
+    description: 'Download your favourite music from many platform with our bots!.',
     image: '/down.svg?height=70&width=70',
     link: 'https://t.me/NekoMuBot',
   },

@@ -6,7 +6,6 @@ import { Button, Card, CardContent, CardMedia, Typography, CircularProgress, Ava
 import Link from 'next/link'
 import { Send as TelegramIcon, Menu as MenuIcon } from '@mui/icons-material'
 
-// Sample bot data with Telegram links
 const bots = [
   {
     id: 1,

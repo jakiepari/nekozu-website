@@ -14,7 +14,7 @@ const bots = [
     id: 1,
     name: 'Nekozu Music',
     description: 'Download your favourite music from many platform with our bots!',
-    image: '/down.svg?height=100&width=100',
+    image: '/down.svg',
     link: 'https://t.me/NekoMuBot',
     color: '#FF6B6B'
   },
@@ -22,7 +22,7 @@ const bots = [
     id: 2,
     name: 'Nekozu Translate',
     description: 'Translate text between multiple languages instantly. With also voice to text and translate from photo!',
-    image: '/trans.svg?height=100&width=100',
+    image: '/trans.svg',
     link: 'https://t.me/NekoTransBot',
     color: '#4ECDC4'
   },
@@ -307,13 +307,15 @@ export default function HomePage() {
                               opacity: 0.1
                             }}
                           />
-                          <CardMedia
-                            component="img"
-                            height="140"
-                            image={bot.image}
-                            alt={bot.name}
-                            className="w-32 h-32 mx-auto mt-8 transform hover:rotate-12 transition-transform duration-300"
-                          />
+                          <div className="relative w-32 h-32 mx-auto mt-8 transform hover:rotate-12 transition-transform duration-300">
+                            <Image
+                              src={bot.image}
+                              alt={bot.name}
+                              width={128}
+                              height={128}
+                              className="object-contain"
+                            />
+                          </div>
                           <CardContent className="text-center p-6">
                             <Typography
                               variant="h5"

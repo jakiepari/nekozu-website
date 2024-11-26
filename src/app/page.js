@@ -3,17 +3,22 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Button, Card, CardContent, CardMedia, Typography, CircularProgress, Avatar, IconButton, useMediaQuery, useTheme } from '@mui/material'
+import { Button, Card, CardContent, Typography, CircularProgress, Avatar, IconButton } from '@mui/material'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Send as TelegramIcon, Menu as MenuIcon, ShoppingCart as ShopIcon, Close as CloseIcon } from '@mui/icons-material'
-import Particles from 'react-particles'
-import { loadFull } from "tsparticles"
+import dynamic from 'next/dynamic'
+
+const Particles = dynamic(() => import('react-particles').then((mod) => mod.default), {
+  ssr: false,
+  loading: () => <div>Loading...</div>,
+})
 
 const bots = [
   {
     id: 1,
     name: 'Nekozu Music',
-    description: 'Download your favourite music from many platform with our bots!',
+    description: 'Download your favourite music from many platforms with our bots!',
     image: '/down.svg',
     link: 'https://t.me/NekoMuBot',
     color: '#FF6B6B'
@@ -54,40 +59,22 @@ export default function HomePage() {
   const [typedText, setTypedText] = useState('')
   const [navbarOpen, setNavbarOpen] = useState(false)
   const fullText = "Best Telegram Bots for Your Needs :3"
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
 
-  const particlesInit = async (engine) => {
-    await loadFull(engine)
+  const particlesInit = async (engine: any) => {
+    await (await import('tsparticles')).loadFull(engine)
   }
 
   const particlesConfig = {
     particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800
-        }
-      },
-      color: {
-        value: "#6b7280"
-      },
-      shape: {
-        type: "circle"
-      },
-      opacity: {
-        value: 0.5,
-        random: false
-      },
-      size: {
-        value: 3,
-        random: true
-      },
+      number: { value: 50, density: { enable: true, value_area: 800 } },
+      color: { value: "#6b7280" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: false },
+      size: { value: 3, random: true },
       line_linked: {
         enable: true,
         distance: 150,
@@ -108,14 +95,8 @@ export default function HomePage() {
     interactivity: {
       detect_on: "canvas",
       events: {
-        onhover: {
-          enable: true,
-          mode: "repulse"
-        },
-        onclick: {
-          enable: true,
-          mode: "push"
-        },
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" },
         resize: true
       }
     },
@@ -383,3 +364,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+

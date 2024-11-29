@@ -252,6 +252,17 @@ export default function HomePage() {
                   >
                     Visit Our Shop
                   </Button>
+                  <Button
+                    variant="contained"
+                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    size="large"
+                    startIcon={<ShopIcon />}
+                    href="https://t.me/nekopaybot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Payment Bot
+                  </Button>
                 </motion.div>
               </div>
             </section>

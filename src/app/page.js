@@ -9,10 +9,10 @@ import Image from 'next/image'
 import { Send as TelegramIcon, Menu as MenuIcon, ShoppingCart as ShopIcon, Close as CloseIcon } from '@mui/icons-material'
 import dynamic from 'next/dynamic'
 
-const Particles = dynamic(() => import('react-particles').then((mod) => mod.default), {
+const Particles = dynamic(() => import('react-particles'), {
   ssr: false,
   loading: () => <div>Loading...</div>,
-})
+});
 
 const bots = [
   {
@@ -64,7 +64,7 @@ export default function HomePage() {
     threshold: 0.1
   })
 
-  const particlesInit = async (engine: any) => {
+  const particlesInit = async (engine) => {
     await (await import('tsparticles')).loadFull(engine)
   }
 
